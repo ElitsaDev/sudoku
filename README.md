@@ -1,5 +1,5 @@
 # sudoku
-Interactive Application
+Interactive Application - Vanilla JavaScript
 
 We use module JS, so live server will serve content of application. We can't use FTP protocol.
 
