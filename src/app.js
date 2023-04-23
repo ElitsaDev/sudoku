@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', start);
 
 function start(){
     const main = document.querySelector('main');
-    const cells = {
+    let cells = {
         blocks: [[]],
         rows: [[]],
         columns: [[]],
@@ -38,9 +38,11 @@ function start(){
 
 function check(cells){
     const numbers = new Set();
-
+    
     for(let cell of cells){
+        console.log(cell.value)
         if(cell.value != ''){
+            
             numbers.add(cell.value);
         }
     }

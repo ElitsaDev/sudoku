@@ -1,7 +1,7 @@
 export function createTimer(){
     const output = document.getElementById('timer');
     let lastTime = performance.now();
-    let elapsed = 0; //pazi kolko vreme e minalo
+    let elapsed = 0; //keep track of how much time has passed
 
     tick(lastTime);
 
@@ -18,7 +18,7 @@ export function createTimer(){
         elapsed += delta;
         lastTime = time;
 
-        const total = elapsed / 1000;//broi v sekundi saobrazeno s Hz na monitora
+        const total = elapsed / 1000;//counts in seconds according to the Hz of the monitor
         const seconds = total % 60;
         const minutes = (total / 60) % 60;
         const hours = total / 3600; 

@@ -6,10 +6,22 @@
 
 body {
     padding: 32px;
+    background: #333;
 }
 
 main {
     float: left;
+    margin-left: 15%;
+    position: relative;
+    min-width: 40%;
+    min-height: 400px;  
+    background: #333;
+    padding: 40px 30px 30px;
+    border-radius: 20px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .cluster::after {
@@ -21,7 +33,6 @@ main {
 .block {
     border: 1px solid black;
     float: left;
-    width: 150px;
     box-sizing: content-box;
 }
 
@@ -32,15 +43,16 @@ main {
     text-align: center;
     font-size: 28px;
     color: blue;
+    background-color: #f1f1f1; 
 }
 
-.cell:focus {
+/* .cell:focus {
     background-color: rgba(135, 182, 204, 0.5);
     border: 1px solid gray;
-}
+} */
 
 .cell:disabled {
-    background-color: white;
+    /* background-color: white; */
     color: black;
     font-weight: bold;
 }
@@ -54,27 +66,93 @@ main {
 }
 
 #panel {
-    float: left;
-    padding: 64px;
+    float: right;
+    margin-left: 5%;
+    margin-right: 15%;
     text-align: center;
+    width: 25%;
+    width: 250px;
+    min-height: 400px;
+    background: #333;
+    padding: 40px 30px 30px;
+    border-radius: 20px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 button {
+    margin: 10px 0 10px 0;
     display: block;
     font-size: 24px;
     width: 100%;
+    min-width: 200px;
     padding: 4px 8px;
+    background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+    inset 0 -8px 8px rgba(0, 0, 0, 0.25),
+    0 0 0 2px rgba(0, 0, 0, 0.75),
+    10px 20px 25px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-weight: 400;
+    border-radius: 10px;
+}
+
+button::after{
+    filter: brightness(1.5);
 }
 
 #checkBtn {
     margin-bottom: 32px;
+    background: #f00
+}
+
+#pauseBtn{
+    background: #2196f3;
 }
 
 #timer {
-    background-color: rgba(135, 182, 204, 0.5);
     display: block;
     font-size: 24px;
-    margin: 32px;
+    min-width: 200px;
+    margin-top: 32px;
+    margin-bottom: 32px;
     border: 1px solid black;
     padding: 8px 16px;
+    background: linear-gradient(90deg, #a7af7c, #4d4d4d);
+    border-radius: 10px;
+}
+
+textarea {
+    width: calc(100% + 2px);
+    min-width: 200px;
+    min-height: 155px;
+    margin: -10px 0 -10px 0;
+    background-color: rgb(54, 62, 70);
+}
+
+@media screen and (min-width: 375) {
+
+    .cell  {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 680) {
+
+    .cell  {
+        width: 70%;
+        height: 70%;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1150) {
+
+    #panel {
+        margin-top: 20px;   
+    }
 }
