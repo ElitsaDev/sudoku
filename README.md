@@ -1,6 +1,7 @@
 # sudoku
 Interactive Application - Vanilla JavaScript
-#About game
+
+# About game
 Sudoku is a popular logic puzzle with numbers. Its rules are quite simple, so even beginners can handle the simple levels.
 Each 3×3 block can only contain numbers from 1 to 9.
 Each vertical column can only contain numbers from 1 to 9.
