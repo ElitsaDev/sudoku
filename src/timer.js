@@ -1,19 +1,28 @@
-export function createTimer(){
+export function createTimer() {
     const output = document.getElementById('timer');
     let lastTime = performance.now();
     let elapsed = 0; //keep track of how much time has passed
 
+    let active = true;
+
     tick(lastTime);
 
-    function pause(){
-
+    return {
+        pause,
+        resume
+    }
+    
+    function pause() {
+        active = false;
     }
 
-    function resume(){
-        
+    function resume() {
+        active = true;
+        lastTime = performance.now();
+        tick(lastTime);
     }
 
-    function tick(time){
+    function tick(time) {
         const delta = time - lastTime;
         elapsed += delta;
         lastTime = time;
@@ -21,13 +30,15 @@ export function createTimer(){
         const total = elapsed / 1000;//counts in seconds according to the Hz of the monitor
         const seconds = total % 60;
         const minutes = (total / 60) % 60;
-        const hours = total / 3600; 
+        const hours = total / 3600;
 
-        output.textContent = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;  
-        requestAnimationFrame(tick);
-    }
+        output.textContent = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+        if(active){
+           requestAnimationFrame(tick); 
+        } 
+    }  
 }
 
-function formatTime(value){
+function formatTime(value) {
     return ('0' + Math.floor(value)).slice(-2);
 }
