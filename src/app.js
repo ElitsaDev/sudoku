@@ -1,7 +1,13 @@
-import { p1 } from './puzzles.js';
+//import { p1 } from './puzzles.js'; only for testing purposes
 import { generateBoard, button, e } from './board.js'
 import { init } from './import.js';
 import { createTimer } from './timer.js';
+//import  generateBlankBoard  from './generateNewSudoku.js';
+
+import { puzzle } from './sudokuGenerator.js';
+console.log(puzzle)
+//import startingBoard from './fillboard.js';
+
 // Load puzzle
 // Generate DOM elements
 // Check solution
@@ -11,20 +17,28 @@ window.addEventListener('DOMContentLoaded', start);
 
 function start(){
     const panel = document.getElementById('panel');
+
     const main = document.querySelector('main');
     let cells = {
         blocks: [[]],
         rows: [[]],
         columns: [[]],
     };
-   //const cells = generateBoard(new Array(3).fill(new Array(3).fill(new Array(9).fill(0))), main) //prazno sudoku
-
+    //prazno sudoku
+   //let blankBoard = generateBlankBoard();
+   //console.log(blankBoard);
+   
     const checkBtn = document.getElementById('checkBtn'); 
     checkBtn.addEventListener('click', () => {
-        const blocksReady = cells.blocks.every(check);
-        const rowsReady = cells.rows.every(check);
-        const columnsReady = cells.columns.every(check);
+        cells.blocks.forEach(b => check(b));
+        const blocksReady = cells.blocks.every(check);   
 
+        cells.rows.forEach(r => check(r)); 
+        const rowsReady = cells.rows.every(check);
+
+        cells.columns.forEach(c => check(c));
+        const columnsReady = cells.columns.every(check);
+        
         if(blocksReady && rowsReady  && columnsReady ){
             const img = e('img', { attr: 'src' }, '')
             img.src = 'src/win.jpg';
@@ -59,14 +73,14 @@ function start(){
     
    // check(cells[0]);
    init((puzzle => {
-        cells = generateBoard(puzzle, main);
+        cells = generateBoard(puzzle, main); 
         createTimer();
    }));
 }
 
-function check(cells){
+export function check(cells){
     const numbers = new Set();
-
+    console.log(cells)
     for(let cell of cells){
         console.log(cell.value)
         if(cell.value != ''){    
@@ -82,13 +96,3 @@ function check(cells){
         return false;
     }
 }
-
-
-
-
-// function start() {
-//     const panel = document.getElementById('panel');
-//     const main = document.querySelector('main');
-//     const cells = generateBoard(p1, main);
-   
-// }

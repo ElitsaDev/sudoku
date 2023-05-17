@@ -11,7 +11,7 @@ export function createTimer() {
         pause,
         resume
     }
-    
+
     function pause() {
         active = false;
     }
@@ -33,10 +33,10 @@ export function createTimer() {
         const hours = total / 3600;
 
         output.textContent = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
-        if(active){
-           requestAnimationFrame(tick); 
-        } 
-    }  
+        if (active) {
+            requestAnimationFrame(tick);
+        }
+    }
 }
 
 function formatTime(value) {

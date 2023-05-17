@@ -5,7 +5,7 @@ export function generateBoard(values, main) {
 
     const blocks = [...clusters[0].cells, ...clusters[1].cells, ...clusters[2].cells];
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < rows.length; i++) {
         const columnOffset = (i % 3) * 3;
         const rowOffset = Math.floor(i / 3) * 3;
         for (let j = 0; j < 9; j++) {
@@ -35,7 +35,7 @@ function cluster(values) {
     const blocks = values.map(block);
     return {
         cells: blocks.map(b => b.cells),
-        element: e('div', { className: 'cluster' }, ...blocks.map(b => b.element)), //spedvame zashoto ina4e 6te polu4im nov masiv
+        element: e('div', { className: 'cluster' }, ...blocks.map(b => b.element)), //spredvame zashoto ina4e 6te polu4im nov masiv
     }
 }
 

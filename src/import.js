@@ -1,4 +1,12 @@
+"use strict"
 import { button, e } from './board.js';
+import puzzle1 from '../static/puzzle1.json' assert { type: 'json' };
+import { puzzle } from './sudokuGenerator.js';
+
+
+console.log(typeof puzzle);
+console.log('----------------------------------------------');
+console.log(puzzle1);
 
 export function init(generate){
     const input = e('textarea', {});
@@ -12,8 +20,7 @@ export function init(generate){
     });
 
     const confirmBtn = button('Load', () => {
-        const puzzle = JSON.parse(input.value);
-        generate(puzzle)
+        generate(puzzle1)
     });
 
     const div = e('div', {}, hideBtn, input, confirmBtn);
