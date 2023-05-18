@@ -16,4 +16,5 @@ I have used module JS, so live server will serve content of application. It can'
 - npm install -g lite-server
 or find extention Live Server by Ritwick Dey and install it (serve application on localhost:5000):
 
-![image](https://github.com/ElitsaDev/sudoku/assets/94979851/807eb0bc-e3b2-4d53-8128-465e93bd4296)
+
+![image](https://github.com/ElitsaDev/sudoku/assets/94979851/68b2429e-eb09-4aa4-b3c5-e5b783863f4d)
