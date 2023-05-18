@@ -18,3 +18,6 @@ or find extention Live Server by Ritwick Dey and install it (serve application o
 
 
 ![image](https://github.com/ElitsaDev/sudoku/assets/94979851/68b2429e-eb09-4aa4-b3c5-e5b783863f4d)
+
+![image](https://github.com/ElitsaDev/sudoku/assets/94979851/77f3bef4-7097-4fed-bf15-c446ec5a1a3d)
+
