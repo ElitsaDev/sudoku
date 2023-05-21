@@ -22,5 +22,6 @@ While the user solves the puzzle a timer counts down the elapsed time. If the us
 When a user decides he is ready, he can check his solution with a _Check!_ button. If it is wrong or incomplete,some cells of the board will be colored red.
 ![image](https://github.com/ElitsaDev/sudoku/assets/94979851/68b2429e-eb09-4aa4-b3c5-e5b783863f4d)
 
+![image](https://github.com/ElitsaDev/sudoku/assets/94979851/bef81c34-4328-48ca-a34b-0023168a21a5)
 
-![image](https://github.com/ElitsaDev/sudoku/assets/94979851/37aaa887-3957-43eb-a082-5d0561125ac3)
+
