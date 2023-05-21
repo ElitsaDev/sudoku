@@ -35,7 +35,7 @@ function cluster(values) {
     const blocks = values.map(block);
     return {
         cells: blocks.map(b => b.cells),
-        element: e('div', { className: 'cluster' }, ...blocks.map(b => b.element)), //spredvame zashoto ina4e 6te polu4im nov masiv
+        element: e('div', { className: 'cluster' }, ...blocks.map(b => b.element)), //we have to spread because otherwise we will get a new array
     }
 }
 

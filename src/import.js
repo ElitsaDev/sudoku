@@ -1,13 +1,25 @@
 "use strict"
-import { button, e } from './board.js';
-import puzzle1 from '../static/puzzle1.json' assert { type: 'json' };
-import { puzzle } from './sudokuGenerator.js';
+import puzzle from './sudokuGenerator.js';
+//import { button, e } from './board.js';
+//import puzzle1 from '../static/puzzle1.json' assert { type: 'json' };
 
+export function init(generate){
+    const showBtn = document.getElementById('loadBtn');
+    
+    
+    showBtn.addEventListener('click', () => {
+        
+        if(showBtn.hasAttribute('clicked')){
+            location.reload();
+            showBtn.removeAttribute('clicked');
+        }else{
+            generate(puzzle); 
+            showBtn.setAttribute('clicked', false);   
+        }    
+    });
+}
 
-console.log(typeof puzzle);
-console.log('----------------------------------------------');
-console.log(puzzle1);
-
+/*
 export function init(generate){
     const input = e('textarea', {});
     const showBtn = document.getElementById('loadBtn');
@@ -20,9 +32,9 @@ export function init(generate){
     });
 
     const confirmBtn = button('Load', () => {
-        generate(puzzle1)
+        generate(puzzle)
     });
 
-    const div = e('div', {}, hideBtn, input, confirmBtn);
-}
-
+    const div = e('div', {}, hideBtn, input, confirmBtn);  
+} */
+ 

@@ -247,8 +247,8 @@ function removeNumbers(attempts, grid){
       backup = grid[row][col];
       grid[row][col] = 0;
 
-      row = getRandomInt(0, 8)
-      col = getRandomInt(0, 8)
+      row = getRandomInt(0, 9)
+      col = getRandomInt(0, 9)
     }
     //Take a full copy of the grid
     copyGrid = JSON.parse(JSON.stringify(grid));
@@ -278,7 +278,12 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
+const puzzle = [];
 
-export const puzzle = copyGrid;
+for(let i = 0; i < copyGrid.length; i+= 3){
+  puzzle.push(copyGrid.slice(i, i + 3));
+}
+
+ export default puzzle;
 
 //solve(copyGrid);

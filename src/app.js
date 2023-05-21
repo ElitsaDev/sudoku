@@ -1,10 +1,10 @@
-//import { p1 } from './puzzles.js'; only for testing purposes
+//import { p1 } from './puzzles.js'; p1 is used only for testing purposes
 import { generateBoard, button, e } from './board.js'
 import { init } from './import.js';
 import { createTimer } from './timer.js';
 //import  generateBlankBoard  from './generateNewSudoku.js';
 
-import { puzzle } from './sudokuGenerator.js';
+import  puzzle from './sudokuGenerator.js';
 console.log(puzzle)
 //import startingBoard from './fillboard.js';
 
@@ -24,7 +24,7 @@ function start(){
         rows: [[]],
         columns: [[]],
     };
-    //prazno sudoku
+    
    //let blankBoard = generateBlankBoard();
    //console.log(blankBoard);
    
