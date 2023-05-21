@@ -182,14 +182,17 @@ img {
     height: 400px;
 }
 
+button#theme{
+    width: 30px;
+}
+
 #theme {
-    position: absolute;
+  position: absolute;
   padding: 5px;
+  min-width: 40px;
   text-align: center;
-  display: inline-block;
   font-size: 20px;
   margin: 5px 5px;
-  border-radius: 50%; 
   color: var(--text-color);
   cursor: pointer;
 }
