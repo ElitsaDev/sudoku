@@ -4,24 +4,42 @@
     box-sizing: border-box;
 }
 
+:root,
+:root.light {
+  --bg-color: #fff;
+  --text-color: #333;
+  --border-color: white;
+  --button-color-left:  #f2f2f2;
+  --button-color-right:  #f3f3f3;
+}
+
+:root.dark {
+  --bg-color: #333;
+  --text-color: #fff;
+  --border-color: black;
+  --button-color-left:  #2f2f2f;
+  --button-color-right:  #3f3f3f;
+}
+
 body {
     padding: 32px;
-    background: #333;
+    background: var(--bg-color);
 }
 
 main {
     float: left;
     margin-left: 15%;
     position: relative;
-    min-width: 40%;
+    min-width: min(40%, 400px) ;
     min-height: 400px;  
-    background: #333;
+    background: var(--bg-color);
     padding: 40px 30px 30px;
     border-radius: 20px;
     box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
     10px 10px 70px rgba(0, 0, 0, 0.25),
     inset -5px -5px 15px rgba(0, 0, 0, 0.5),
     inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 60px;
 }
 
 .cluster::after {
@@ -31,9 +49,10 @@ main {
 }
 
 .block {
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
     float: left;
     box-sizing: content-box;
+    
 }
 
 .cell {
@@ -73,7 +92,7 @@ main {
     width: 25%;
     width: 250px;
     min-height: 400px;
-    background: #333;
+    background: var(--bg-color);
     padding: 40px 30px 30px;
     border-radius: 20px;
     box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
@@ -89,12 +108,13 @@ button {
     width: 100%;
     min-width: 200px;
     padding: 4px 8px;
-    background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+    background: linear-gradient(180deg, var(--button-color-left), var(--button-color-right));
+    border-color: var(--border-color);
     box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
     inset 0 -8px 8px rgba(0, 0, 0, 0.25),
     0 0 0 2px rgba(0, 0, 0, 0.75),
     10px 20px 25px rgba(0, 0, 0, 0.4);
-    color: #fff;
+    color: var(--text-color);
     font-weight: 400;
     border-radius: 10px;
 }
@@ -118,7 +138,7 @@ button::after{
     min-width: 200px;
     margin-top: 32px;
     margin-bottom: 32px;
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
     padding: 8px 16px;
     background: linear-gradient(90deg, #a7af7c, #4d4d4d);
     border-radius: 10px;
@@ -153,11 +173,27 @@ textarea {
 @media screen and (max-width: 1150) {
 
     #panel {
-        margin-top: 20px;   
+        margin-top: 60px;   
     }
 }
 
 img {
-    width: 400px;
+    width: 100%;
     height: 400px;
+}
+
+#theme {
+    position: absolute;
+  padding: 5px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  margin: 5px 5px;
+  border-radius: 50%; 
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+#theme:hover {
+    color:  #a7af7c;
 }

@@ -24,7 +24,14 @@ function start(){
         rows: [[]],
         columns: [[]],
     };
-    
+
+    // check(cells[0]);
+    init((puzzle => {
+        cells = generateBoard(puzzle, main);
+        //createTimer();
+    }));
+    const timer = createTimer();
+
    //let blankBoard = generateBlankBoard();
    //console.log(blankBoard);
    
@@ -53,8 +60,6 @@ function start(){
         uncheckedButton.replaceWith(checkBtn);
     })
 
-    const timer = createTimer();
-
     const pauseBtn = document.getElementById('pauseBtn'); 
      
     pauseBtn.addEventListener('click', () => {
@@ -69,13 +74,7 @@ function start(){
         timer.resume();
         resumeBtn.replaceWith(pauseBtn);
         });
-    });
-    
-   // check(cells[0]);
-   init((puzzle => {
-        cells = generateBoard(puzzle, main); 
-        createTimer();
-   }));
+    });  
 }
 
 export function check(cells){
