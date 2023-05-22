@@ -27,3 +27,6 @@ When a user decides he is ready, he can check his solution with a _Check!_ butto
 # New functionality 
 Users can change the theme of the screen. In LocalStorage is saved the user's current theme settings.
 ![image](https://github.com/ElitsaDev/sudoku/assets/94979851/bc4e5b34-78a5-4123-bfd4-619c20c0c7fb)
+
+# Play game
+The game is uploaded to: https://game-sudoku.netlify.app/
