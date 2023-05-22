@@ -24,4 +24,6 @@ When a user decides he is ready, he can check his solution with a _Check!_ butto
 
 ![image](https://github.com/ElitsaDev/sudoku/assets/94979851/bef81c34-4328-48ca-a34b-0023168a21a5)
 
-
+# New functionality 
+User can change theme of the screen. In LocalStorage is saved the user's current theme settings.
+![image](https://github.com/ElitsaDev/sudoku/assets/94979851/bc4e5b34-78a5-4123-bfd4-619c20c0c7fb)
