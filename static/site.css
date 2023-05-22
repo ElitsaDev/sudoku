@@ -4,21 +4,23 @@
     box-sizing: border-box;
 }
 
-:root,
-:root.light {
+.light {
   --bg-color: #fff;
   --text-color: #333;
   --border-color: white;
   --button-color-left:  #f2f2f2;
   --button-color-right:  #f3f3f3;
+  --shadow-color-25: rgba(255, 255, 255, 0.25);
+  --shadow-color-50: rgba(255, 255, 255, 0.50);
 }
 
-:root.dark {
+.dark {
   --bg-color: #333;
   --text-color: #fff;
   --border-color: black;
   --button-color-left:  #2f2f2f;
   --button-color-right:  #3f3f3f;
+ 
 }
 
 body {
@@ -51,8 +53,7 @@ main {
 .block {
     border: 1px solid var(--border-color);
     float: left;
-    box-sizing: content-box;
-    
+    box-sizing: content-box;    
 }
 
 .cell {
@@ -108,13 +109,13 @@ button {
     width: 100%;
     min-width: 200px;
     padding: 4px 8px;
+    color: var(--text-color);
     background: linear-gradient(180deg, var(--button-color-left), var(--button-color-right));
     border-color: var(--border-color);
     box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
     inset 0 -8px 8px rgba(0, 0, 0, 0.25),
-    0 0 0 2px rgba(0, 0, 0, 0.75),
-    10px 20px 25px rgba(0, 0, 0, 0.4);
-    color: var(--text-color);
+    0 0 0 2px rgba(0, 0, 0, 0.45),
+    10px 20px 25px rgba(0, 0, 0, 0.4); 
     font-weight: 400;
     border-radius: 10px;
 }

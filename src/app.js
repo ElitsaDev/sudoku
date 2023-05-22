@@ -2,6 +2,7 @@
 import { generateBoard, button, e } from './board.js'
 import { init } from './import.js';
 import { createTimer } from './timer.js';
+
 //import  generateBlankBoard  from './generateNewSudoku.js';
 
 import  puzzle from './sudokuGenerator.js';

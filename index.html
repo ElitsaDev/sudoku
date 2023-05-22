@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/static/site.css">
     <title>Sudoku</title>
     <script type="module" src="/src/app.js"></script>
 </head>
+
 <body>
-    <button id="theme"><i class="material-icons">palette</i></button>
+    <button id="theme" onclick="toggleTheme()"><i class="material-icons">palette</i></button>
     <main></main>
     <section id="panel">
         <span id="timer">00:00:00</span>
@@ -20,4 +22,28 @@
         <button id="loadBtn">Load</button>
     </section>
 </body>
+<script>
+    function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+        document.documentElement.className = themeName;
+    }
+
+    function toggleTheme() {
+        if (localStorage.getItem('theme') === 'dark') {
+            setTheme('light');
+        } else {
+            setTheme('dark');
+        }
+    }
+
+    // Immediately invoked function to set the theme on initial load
+    (function () {
+        if (localStorage.getItem('theme') === 'dark') {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+    })();
+</script>
+
 </html>
