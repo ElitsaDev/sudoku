@@ -18,8 +18,10 @@ export function generateBoard(values, main) {
             columns[colIndex][rowIndex] = cell;
         }
     }
+    const div = e('div', { className: 'sudoku' });
+    main.appendChild(div);
 
-    main.replaceChildren(
+    div.replaceChildren(
         clusters[0].element,
         clusters[1].element,
         clusters[2].element);
@@ -46,7 +48,7 @@ function block(values) {
     const row2 = row(values.slice(3, 6));
     const row3 = row(values.slice(6));
 
-    element.appendChild(row1.element);
+    element.appendChild(row1.element);  
     element.appendChild(row2.element);
     element.appendChild(row3.element);
     return {
